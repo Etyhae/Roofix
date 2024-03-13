@@ -1,6 +1,6 @@
 :root {
     --header-height: 6rem;
-    --x-pad: 5rem;
+    --x-pad: 4rem;
     --main-color: #05283B;
     --rounded: 15px;
     --xrounded: 20px;
@@ -131,7 +131,7 @@ main {
 }
 
 .intro {
-    height: calc(100vh - var(--header-height));
+    min-height: calc(100vh - var(--header-height));
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -141,9 +141,9 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 2%;
     max-width: 25%;
-    height: 100%;
+    min-height: 100%;
     background-color: var(--main-color);
     box-sizing: border-box;
     position: relative;
@@ -151,7 +151,7 @@ main {
 
 .intro-menu-items {
     height: 100%;
-    padding: 2rem;
+    padding: 2.5%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -206,9 +206,10 @@ main {
 
 .intro-main {
     max-width: 70%;
-    padding: 0 4rem;
+    padding: 2% 4%;
     height: 100%;
     position: relative;
+    box-sizing: border-box;
 }
 
 .intro-main-text {
@@ -225,14 +226,18 @@ main {
     display: flex;
     justify-content: center;
     overflow: hidden;
-    margin-top: -2rem;
+}
+
+.intro-main-img img {
+    width: 100%;
+    max-width: 45rem;
 }
 
 .catalog {
     width: 100%;
     min-height: calc(100vh - var(--header-height));
     height: 100%;
-    padding: 4rem;
+    padding: var(--x-pad);
     padding-top: 0;
     box-sizing: border-box;
 }
@@ -241,7 +246,8 @@ main {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 4rem;
+    row-gap: 2rem;
+    column-gap: 4rem;
 }
 
 .catalog-card {
@@ -282,7 +288,7 @@ main {
     height: 100%;
     width: 100%;
     background-color: var(--main-color);
-    padding: 4rem;
+    padding: var(--x-pad);
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -293,7 +299,7 @@ main {
 }
 
 .about-info {
-    max-width: 60%;
+    max-width: 55%;
     height: 100%;
     font-size: 1.5rem;
     font-weight: 400;
@@ -360,10 +366,11 @@ main {
     border-radius: var(--xrounded);
     background-color: var(--white);
     box-sizing: border-box;
-    padding: 4rem 5%;
+    padding: var(--x-pad) 5%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 .about-profit button {
@@ -373,7 +380,7 @@ main {
 .advantages {
     width: 100%;
     min-height: calc(100vh - var(--header-height));
-    padding: 4rem;
+    padding: var(--x-pad);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -381,9 +388,11 @@ main {
 
 .advantages-items {
     display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-    gap: 4rem;
-    padding: 4rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    column-gap: 4rem;
+    row-gap: 2rem;
+    margin-top: 2rem;
+    padding: var(--x-pad) 0;
     box-sizing: border-box;
 }
 
@@ -396,7 +405,9 @@ main {
 
 .question-form {
     width: 100%;
-    height: 40vh;
+    min-height: 40vh;
+    height: 100%;
+    max-height: 80vh;
     margin: 0;
     box-sizing: border-box;
     background-image: url(../../images/form_back.png);
@@ -411,6 +422,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 5% 0;
 }
 
 .question-form fieldset {
@@ -427,13 +439,16 @@ main {
 
 .question-form-inputs {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;
-    column-gap: 4rem;
+    column-gap: 4vw;
     row-gap: 2rem;
     margin-top: 5rem;
+    box-sizing: border-box;
+    padding: 0 var(--x-pad);
 }
 
 .input-text {
@@ -444,6 +459,7 @@ main {
     border: none;
     font-size: 1.5rem;
     color: var(--main-color);
+    box-sizing: border-box;
 }
 
 .input-text::placeholder {
@@ -454,4 +470,35 @@ main {
 
 .question-form-inputs button {
     max-width: 20rem;
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --x-pad: 1rem;
+    }
+
+    .advantages-items {
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+
+    .about {
+        justify-content: center;
+    }
+
+    .about-additionaly {
+        max-width: 100%;
+    }
+
+    .about-info {
+        max-width: 100%;
+    }
+
+    .about-profit {
+        max-width: 80%;
+        row-gap: 1rem
+    }
+
+    .about-profit button {
+        width: 100%;
+    }
 }
