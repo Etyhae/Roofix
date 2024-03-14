@@ -17,6 +17,7 @@ body {
     /* font-family: 'Geometria', sans-serif; */
     /* font-family: "Philosopher", sans-serif; */
     font-family: "Podkova", serif;
+    position: relative;
 }
 
 main {
@@ -132,24 +133,26 @@ main {
 
 .intro {
     min-height: calc(100vh - var(--header-height));
-    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: flex-end
 }
 
-.intro-menu {
+.menu {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 2%;
-    max-width: 25%;
+    width: 20%;
     min-height: 100%;
     background-color: var(--main-color);
     box-sizing: border-box;
-    position: relative;
+    position: fixed;
+    z-index: 999;
 }
 
-.intro-menu-items {
+.menu-items {
     height: 100%;
     padding: 2.5%;
     display: flex;
@@ -182,30 +185,30 @@ main {
     color: var(--white);
 }
 
-.intro-menu-catalog {
+.menu-catalog {
     display: flex;
     flex-direction: column;
     column-gap: 2rem;
     row-gap: 1.5rem;
 }
 
-.intro-menu-catalog a {
+.menu-catalog a {
     font-size: 1rem;
     font-weight: 600;
     color: var(--white);
     text-decoration: none;
 }
 
-.intro-menu-back {
+.menu-back {
     position: absolute;
     padding: 2rem;
-    bottom: 0;
+    bottom: 100px;
     width: 80%;
     left: 0;
 }
 
 .intro-main {
-    max-width: 70%;
+    width: 80%;
     padding: 2% 4%;
     height: 100%;
     position: relative;
@@ -267,12 +270,13 @@ main {
 }
 
 .catalog {
-    width: 100%;
+    width: 80%;
     min-height: calc(100vh - var(--header-height));
     height: 100%;
     padding: var(--x-pad);
     padding-top: 0;
     box-sizing: border-box;
+    float: right;
 }
 
 .catalog-menu {
@@ -319,7 +323,8 @@ main {
 .about {
     min-height: calc(100vh - var(--header-height));
     height: 100%;
-    width: 100%;
+    width: 80%;
+    float: right;
     background-color: var(--main-color);
     padding: var(--x-pad);
     box-sizing: border-box;
@@ -347,7 +352,7 @@ main {
     align-items: center;
     gap: 0.5rem;
     position: relative;
-    padding-left: 1rem;
+    padding-left: 1.5rem;
 }
 
 .about-num::after {
@@ -411,7 +416,8 @@ main {
 }
 
 .advantages {
-    width: 100%;
+    width: 80%;
+    float: right;
     min-height: calc(100vh - var(--header-height));
     padding: var(--x-pad);
     box-sizing: border-box;
@@ -437,7 +443,8 @@ main {
 }
 
 .question-form {
-    width: 100%;
+    width: 80%;
+    float: right;
     min-height: 40vh;
     height: 100%;
     max-height: 80vh;
@@ -456,6 +463,7 @@ main {
     align-items: center;
     flex-direction: column;
     padding: 5% 0;
+    padding-left: 0;
 }
 
 .question-form fieldset {
