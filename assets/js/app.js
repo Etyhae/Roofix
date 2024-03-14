@@ -1,10 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
     const parts = document.querySelectorAll(".house_img");
-    for (let index = 0; index < parts.length; index++) {
-        const element = parts[index];
-        element.style.animationName = "slideIn";
-        element.style.animationDuration = `${parts.length - index - 1}s`;
-        element.style.animationDelay = "0s";
-        element.style.animationTimingFunction = "ease-out";
-    }
+
+    Array.from(parts).forEach((item, index) => {
+        const img = new Image();
+        img.src = item.src;
+        img.onload = () => {
+            item.style.animationName = "slideIn";
+            item.style.animationDuration = `${parts.length - index - 1}s`;
+            item.style.animationDelay = "0s";
+            item.style.animationTimingFunction = "ease-out";
+        };
+    });
 })
