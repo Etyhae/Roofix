@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const blockID = anchor.getAttribute("href").substr(1);
             const element = document.getElementById(blockID);
-            const offset = -50; // offset in pixels
+            const offset = -150; // offset in pixels
 
             const y = element.getBoundingClientRect().top + window.scrollY + offset;
 
